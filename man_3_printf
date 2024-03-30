@@ -1,0 +1,58 @@
+.\" Manpage for _printf.
+.TH _printf 3 "29 March 2024" "1.0" "User Manual for _printf"
+.SH NAME
+_printf \- formatted output conversion
+.SH SYNOPSIS
+.B #include <stdarg.h>
+.B #include <unistd.h>
+.sp
+.B int _printf(const char *format, ...);
+.SH DESCRIPTION
+The _printf() function writes output according to a format string to the standard output stream stdout. The format string can contain format specifiers that begin with '%' and end with a conversion specifier.
+.SH RETURN VALUE
+Upon successful completion, _printf() returns the number of characters printed (excluding the null byte used to end output to strings). If an output error occurs, a negative value is returned.
+.SH FORMAT SPECIFIERS
+The following format specifiers are supported:
+.TP
+.B %c
+Prints a single character.
+.TP
+.B %s
+Prints a null-terminated string of characters.
+.TP
+.B %%
+Prints a single '%' character.
+.TP
+.B %d, %i
+Prints an integer in signed decimal notation.
+.SH EXAMPLES
+The following code snippet demonstrates the usage of _printf():
+.sp
+.nf
+.B #include "main.h"
+.B #include <stdio.h>
+.sp
+.B int main(void) {
+.B     int num = 10;
+.B     _printf("The value of num is %d\n", num);
+.B     return (0);
+.B }
+.fi
+.sp
+This program will output:
+.sp
+.nf
+The value of num is 10
+.fi
+.SH SEE ALSO
+fprintf(3), sprintf(3), snprintf(3), vprintf(3), stdio(3), printf(1)
+.SH STANDARDS
+The _printf() function conforms to ISO/IEC 9899:1999 (ISO C99).
+.SH AUTHOR
+The _printf() function and this manual page were written by Nargiz Samedova and Rafig Mammadov.
+.SH REPORTING BUGS
+Report bugs to 8703@holbertonstudents.com and 9088@holbertonstudents.com.
+.SH COPYRIGHT
+This manual page is public domain.
+.SH BUGS
+No known bugs.
