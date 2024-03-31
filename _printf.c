@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 
 			else
 			{
-				int (*fc)(va_list) = get_function(format[i+1]);
+				int (*fc)(va_list) = get_function(format[i + 1]);
 
 				if (fc)
 				{
